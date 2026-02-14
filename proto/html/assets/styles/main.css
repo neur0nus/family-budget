@@ -1,0 +1,146 @@
+/* ===== Сброс ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2937;
+  padding: 30px;
+}
+
+/* ===== Верхняя часть ===== */
+.top {
+  margin-bottom: 30px;
+}
+
+.top h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.top p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===== Карточки статистики ===== */
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info > div {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.info > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.info p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.count {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+/* Цветовые акценты */
+.sumall .count {
+  color: #16a34a;
+}
+
+.expenceall .count {
+  color: #dc2626;
+}
+
+.balance .count {
+  color: #2563eb;
+}
+
+.sumused .count {
+  color: #f59e0b;
+}
+
+/* ===== Графики ===== */
+.grafs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.graf_expenses,
+.graf_acc {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.graf_expenses p:first-child,
+.graf_acc p:first-child {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.text {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ===== Таблица транзакций ===== */
+.table {
+  margin-bottom: 30px;
+}
+
+.transactions {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.transactions p:first-child {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .grafs {
+    grid-template-columns: 1fr;
+  }
+
+  .count {
+    font-size: 18px;
+  }
+
+  .top h1 {
+    font-size: 22px;
+  }
+}
+
