@@ -370,3 +370,81 @@ GRANT ALL ON TABLE subj TO testuser;
 -- Permissions
 
 GRANT ALL ON SCHEMA public TO pg_database_owner;
+
+--Initial Data
+
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'ЖКХ', 'Коммунальный услуги (вода, тепло, электричество)');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Продукты', 'Покупка продуктов питания');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Транспорт', 'Общественный транспорт, такси, топливо, ОСАГО');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Связь и Интернет', 'Домашний интернет, мобильная связь');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Здоровье', 'Медицинские услуги, лекарства');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Налоги', 'Дом, авто');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Развлечения', 'Игры, кинотеатры, хобби и другое');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Рестораны', 'Рестораны, кафе, столовые');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Задолженности', 'Кредиты, займы, долги');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Спорт', 'Тренажерный зал, спортивный инвентарь, спортивное питание');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Подписки', 'Яндекс.Плюс, VPN');
+INSERT INTO category_dict
+(category_type, category_type_desc)
+VALUES( 'Одежда', 'Одежда и обувь');
+INSERT INTO category_dict
+(category_id, category_type, category_type_desc)
+VALUES( 'Зарплата', 'Основной доход');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Подработка', 'Дополнительный доход');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Подарки', 'Денежные дарения');
+INSERT INTO category_dict
+( category_type, category_type_desc)
+VALUES( 'Проценты', 'Доходы от вложенных средств');
+
+
+INSERT INTO category_type
+( category_name, category_code, budget_limit, is_active, category_desc, category_id)
+VALUES( 'Продукты', 'groceries', 20000.0, true, NULL, 2);
+INSERT INTO category_type
+( category_name, category_code, budget_limit, is_active, category_desc, category_id)
+VALUES( 'ЖКХ', 'communal', NULL, true, NULL, 1);
+
+
+INSERT INTO check_acc_dict
+(account_type_id, account_type_name, account_type_desc)
+VALUES(1, 'Карта', 'Банковская карта');
+INSERT INTO check_acc_dict
+(account_type_id, account_type_name, account_type_desc)
+VALUES(2, 'Наличные', NULL);
+INSERT INTO check_acc_dict
+(account_type_id, account_type_name, account_type_desc)
+VALUES(3, 'Кредитная карта', 'Банковская кредитная карта');
+INSERT INTO check_acc_dict
+(account_type_id, account_type_name, account_type_desc)
+VALUES(4, 'Вклад', NULL);
+
+
+INSERT INTO check_account
+(check_account_id, account_name, account_type_id, acc_currency, acc_balance, acc_initial_balance, acc_owner_name, acc_owner_id, bank_name, acc_is_active, acc_is_default, credit_limit)
+VALUES(2, 'Основная карта', 1, 'RUB', 15000.0, 0.0, 'Артем', '', NULL, true, true, NULL);
