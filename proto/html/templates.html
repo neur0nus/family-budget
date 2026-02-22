@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шаблоны — Семейный бюджет</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Семейный бюджет</h2>
+      <div class="sidebar-user">
+        <p>admin</p>
+        <span>Администратор</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="transactions.html">Транзакции</a></li>
+          <li><a href="accounts.html">Счета</a></li>
+          <li><a href="budget.html">Бюджет</a></li>
+          <li><a href="reports.html">Отчёты</a></li>
+          <li><a href="templates.html" class="active">Шаблоны</a></li>
+          <li><a href="users.html">Пользователи</a></li>
+          <li><a href="audit.html">Аудит</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="top">
+      <h1>Шаблоны операций</h1>
+      <p>Быстрое создание повторяющихся транзакций</p>
+      <button class="btn btn-primary">+ Создать шаблон</button>
+    </div>
+
+    <div class="info" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <!-- Шаблон 1 -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between;">
+          <p class="card-title">Еженедельные продукты</p>
+          <span class="status-badge status-active">Активен</span>
+        </div>
+        <p class="text">Каждую пятницу</p>
+        <div class="template-steps">
+          <div class="template-step">
+            <span>Продуктовый магазин</span>
+            <span class="step-amount">-3 500 ₽</span>
+          </div>
+          <div class="template-step">
+            <span>Фермерский рынок</span>
+            <span class="step-amount">-2 000 ₽</span>
+          </div>
+        </div>
+        <div style="margin-top: 15px;">
+          <span class="action-icon">✏️</span>
+          <span class="action-icon">🗑️</span>
+          <span class="action-icon" style="float: right;">▶️ Применить</span>
+        </div>
+      </div>
+
+      <!-- Шаблон 2 -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between;">
+          <p class="card-title">Зарплатный день</p>
+          <span class="status-badge status-active">Активен</span>
+        </div>
+        <p class="text">Каждое 10-е число</p>
+        <div class="template-steps">
+          <div class="template-step">
+            <span>Зарплата (основная)</span>
+            <span class="step-amount" style="color: #16a34a;">+120 000 ₽</span>
+          </div>
+          <div class="template-step">
+            <span>Инвестиции</span>
+            <span class="step-amount" style="color: #16a34a;">+15 000 ₽</span>
+          </div>
+        </div>
+        <div style="margin-top: 15px;">
+          <span class="action-icon">✏️</span>
+          <span class="action-icon">🗑️</span>
+          <span class="action-icon" style="float: right;">▶️ Применить</span>
+        </div>
+      </div>
+
+      <!-- Шаблон 3 (неактивный) -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between;">
+          <p class="card-title">Коммунальные платежи</p>
+          <span class="status-badge status-inactive">Неактивен</span>
+        </div>
+        <p class="text">Ежемесячно</p>
+        <div class="template-steps">
+          <div class="template-step">
+            <span>Электричество</span>
+            <span class="step-amount">-1 200 ₽</span>
+          </div>
+          <div class="template-step">
+            <span>Вода</span>
+            <span class="step-amount">-800 ₽</span>
+          </div>
+        </div>
+        <div style="margin-top: 15px;">
+          <span class="action-icon">✏️</span>
+          <span class="action-icon">🗑️</span>
+          <span class="action-icon" style="float: right;">▶️ Применить</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

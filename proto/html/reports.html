@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчёты — Семейный бюджет</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Семейный бюджет</h2>
+      <div class="sidebar-user">
+        <p>admin</p>
+        <span>Администратор</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="transactions.html">Транзакции</a></li>
+          <li><a href="accounts.html">Счета</a></li>
+          <li><a href="budget.html">Бюджет</a></li>
+          <li><a href="reports.html" class="active">Отчёты</a></li>
+          <li><a href="templates.html">Шаблоны</a></li>
+          <li><a href="users.html">Пользователи</a></li>
+          <li><a href="audit.html">Аудит</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="top">
+      <h1>Отчёты</h1>
+      <p>Аналитика доходов и расходов</p>
+    </div>
+
+    <!-- Переключатель периода -->
+    <div class="card" style="display: flex; gap: 10px; align-items: center;">
+      <button class="btn btn-primary">Февраль 2026</button>
+      <button class="btn">Январь 2026</button>
+      <button class="btn">Декабрь 2025</button>
+      <button class="btn">Выбрать период</button>
+    </div>
+
+    <!-- Графики -->
+    <div class="grafs">
+      <div class="card">
+        <p class="card-title">Доходы по категориям</p>
+        <div style="height: 200px; background: #f3f4f6; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <p class="text">[Круговая диаграмма]</p>
+        </div>
+        <div style="margin-top: 15px;">
+          <p><span style="color: #2563eb;">●</span> Зарплата: 120 000 ₽</p>
+          <p><span style="color: #16a34a;">●</span> Подработка: 15 000 ₽</p>
+          <p><span style="color: #f59e0b;">●</span> Инвестиции: 3 200 ₽</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Динамика за месяц</p>
+        <div style="height: 200px; background: #f3f4f6; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+          <p class="text">[Линейный график]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Сводная таблица -->
+    <div class="card">
+      <p class="card-title">Сводка по категориям</p>
+      <table class="table-transactions">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>План</th>
+            <th>Факт</th>
+            <th>Отклонение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Продукты</td>
+            <td>30 000 ₽</td>
+            <td>28 500 ₽</td>
+            <td class="income">+1 500 ₽</td>
+          </tr>
+          <tr>
+            <td>Транспорт</td>
+            <td>10 000 ₽</td>
+            <td>12 250 ₽</td>
+            <td class="expense">-2 250 ₽</td>
+          </tr>
+          <tr>
+            <td>Развлечения</td>
+            <td>15 000 ₽</td>
+            <td>16 200 ₽</td>
+            <td class="expense">-1 200 ₽</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

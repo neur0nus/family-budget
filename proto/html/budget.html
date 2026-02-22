@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бюджет — Семейный бюджет</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Семейный бюджет</h2>
+      <div class="sidebar-user">
+        <p>admin</p>
+        <span>Администратор</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="transactions.html">Транзакции</a></li>
+          <li><a href="accounts.html">Счета</a></li>
+          <li><a href="budget.html" class="active">Бюджет</a></li>
+          <li><a href="reports.html">Отчёты</a></li>
+          <li><a href="templates.html">Шаблоны</a></li>
+          <li><a href="users.html">Пользователи</a></li>
+          <li><a href="audit.html">Аудит</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="top">
+      <h1>Бюджет на месяц</h1>
+      <p>Планирование и контроль расходов</p>
+      <button class="btn btn-primary">Настроить бюджет</button>
+    </div>
+
+    <!-- Общая статистика бюджета -->
+    <div class="info">
+      <div class="card sumall">
+        <p class="card-title">Месячный бюджет</p>
+        <p class="count">100 000 ₽</p>
+        <p class="text">На февраль 2026</p>
+      </div>
+      <div class="card expenceall">
+        <p class="card-title">Потрачено</p>
+        <p class="count expense">37 250 ₽</p>
+        <p class="text">37% от бюджета</p>
+      </div>
+      <div class="card balance">
+        <p class="card-title">Осталось</p>
+        <p class="count">62 750 ₽</p>
+        <p class="text">До конца месяца 12 дней</p>
+      </div>
+    </div>
+
+    <!-- Детализация по категориям -->
+    <div class="card">
+      <p class="card-title">Расходы по категориям</p>
+      
+      <div style="margin: 20px 0;">
+        <div style="display: flex; justify-content: space-between;">
+          <span><strong>Продукты</strong></span>
+          <span>18 500 ₽ / 30 000 ₽</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 62%;"></div>
+        </div>
+        <span class="progress-text">62%</span>
+      </div>
+
+      <div style="margin: 20px 0;">
+        <div style="display: flex; justify-content: space-between;">
+          <span><strong>Транспорт</strong></span>
+          <span>4 250 ₽ / 10 000 ₽</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 42%;"></div>
+        </div>
+        <span class="progress-text">42%</span>
+      </div>
+
+      <div style="margin: 20px 0;">
+        <div style="display: flex; justify-content: space-between;">
+          <span><strong>Развлечения</strong></span>
+          <span>12 500 ₽ / 15 000 ₽</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 83%; background: #f59e0b;"></div>
+        </div>
+        <span class="progress-text">83%</span>
+      </div>
+
+      <div style="margin: 20px 0;">
+        <div style="display: flex; justify-content: space-between;">
+          <span><strong>Коммунальные</strong></span>
+          <span>2 000 ₽ / 7 000 ₽</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 28%;"></div>
+        </div>
+        <span class="progress-text">28%</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

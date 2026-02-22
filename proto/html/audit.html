@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аудит — Семейный бюджет</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Семейный бюджет</h2>
+      <div class="sidebar-user">
+        <p>admin</p>
+        <span>Администратор</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="transactions.html">Транзакции</a></li>
+          <li><a href="accounts.html">Счета</a></li>
+          <li><a href="budget.html">Бюджет</a></li>
+          <li><a href="reports.html">Отчёты</a></li>
+          <li><a href="templates.html">Шаблоны</a></li>
+          <li><a href="users.html">Пользователи</a></li>
+          <li><a href="audit.html" class="active">Аудит</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="top">
+      <h1>Журнал аудита</h1>
+      <p>Все действия пользователей в системе</p>
+    </div>
+
+    <div class="card">
+      <div class="filter">
+        <input type="text" placeholder="Поиск по пользователю или действию..." />
+        <select>
+          <option>Все действия</option>
+          <option>Создание</option>
+          <option>Редактирование</option>
+          <option>Удаление</option>
+          <option>Вход в систему</option>
+        </select>
+        <input type="date" style="width: auto;" />
+      </div>
+    </div>
+
+    <div class="card">
+      <table class="table-transactions">
+        <thead>
+          <tr>
+            <th>Время</th>
+            <th>Пользователь</th>
+            <th>Действие</th>
+            <th>Объект</th>
+            <th>Детали</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15.02.2026 14:35</td>
+            <td>admin</td>
+            <td>Создание</td>
+            <td>Транзакция</td>
+            <td>
+              <span class="status-badge status-active" style="cursor: pointer;">Показать</span>
+              <div class="audit-detail">
+                Добавлен расход: "Пятёрочка" -2 450 ₽
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>15.02.2026 11:20</td>
+            <td>Кузя</td>
+            <td>Редактирование</td>
+            <td>Бюджет</td>
+            <td>
+              <span class="status-badge status-active" style="cursor: pointer;">Показать</span>
+              <div class="audit-detail">
+                Категория "Развлечения": лимит изменён с 12 000 → 15 000 ₽
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>14.02.2026 09:15</td>
+            <td>Маша</td>
+            <td>Вход</td>
+            <td>Система</td>
+            <td>
+              <span class="status-badge status-active" style="cursor: pointer;">Показать</span>
+              <div class="audit-detail">
+                Успешный вход с IP: 192.168.1.45
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>13.02.2026 22:10</td>
+            <td>admin</td>
+            <td>Удаление</td>
+            <td>Шаблон</td>
+            <td>
+              <span class="status-badge status-active" style="cursor: pointer;">Показать</span>
+              <div class="audit-detail">
+                Удалён шаблон: "Коммунальные платежи"
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

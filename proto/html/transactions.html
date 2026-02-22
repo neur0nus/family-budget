@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Транзакции — Семейный бюджет</title>
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Семейный бюджет</h2>
+
+      <div class="sidebar-user">
+        <p>admin</p>
+        <span>Администратор</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="home.html">Главная</a></li>
+          <li><a href="transactions.html" class="active">Транзакции</a></li>
+          <li><a href="accounts.html">Счета</a></li>
+          <li><a href="budget.html">Бюджет</a></li>
+          <li><a href="reports.html">Отчёты</a></li>
+          <li><a href="templates.html">Шаблоны</a></li>
+          <li><a href="users.html">Пользователи</a></li>
+          <li><a href="audit.html">Аудит</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+
+    <div class="top">
+      <h1>Транзакции</h1>
+      <p>Просмотр и управление всеми транзакциями</p>
+      <button class="btn btn-primary" onclick="location.href='add-transaction.html'">Добавить транзакцию</button>
+    </div>
+
+    <!-- Статистика -->
+    <div class="info">
+      <div class="card sumall">
+        <p class="card-title">Всего транзакций</p>
+        <p class="count">0</p>
+        <p class="text">За всё время</p>
+      </div>
+
+      <div class="card balance">
+        <p class="card-title">Общий доход</p>
+        <p class="count income">0.00 ₽</p>
+        <p class="text">Поступило средств</p>
+      </div>
+
+      <div class="card expenceall">
+        <p class="card-title">Общие расходы</p>
+        <p class="count expense">0.00 ₽</p>
+        <p class="text">Потрачено всего</p>
+      </div>
+    </div>
+
+    <!-- Фильтр -->
+    <div class="card">
+      <p class="card-title">Фильтр транзакций</p>
+      <div class="filter">
+        <input type="text" placeholder="Поиск транзакций..." />
+        <select>
+          <option>Все типы</option>
+          <option>Доход</option>
+          <option>Расход</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Таблица транзакций -->
+    <div class="card">
+      <p class="card-title">История транзакций</p>
+      <table class="table-transactions">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Категория</th>
+            <th>Описание</th>
+            <th>Счёт</th>
+            <th>Сумма</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15.02.2026</td>
+            <td>Продукты</td>
+            <td>Ашан</td>
+            <td>Карта Сбер</td>
+            <td class="expense">-3 450 ₽</td>
+            <td>
+              <span class="action-icon">✏️</span>
+              <span class="action-icon">🗑️</span>
+            </td>
+          </tr>
+          <tr>
+            <td>14.02.2026</td>
+            <td>Зарплата</td>
+            <td>ООО "Ромашка"</td>
+            <td>Карта Тинькофф</td>
+            <td class="income">+120 000 ₽</td>
+            <td>
+              <span class="action-icon">✏️</span>
+              <span class="action-icon">🗑️</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+</div>
+</body>
+</html>
