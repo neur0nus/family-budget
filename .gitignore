@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 target
 .idea
 *.iml
 *.project
 *.classpath
+=======
+.env
+.env.local
+*.env
+.project
+.classpath
+.class
+.jar
+.obj
+>>>>>>> origin/learning/step#
