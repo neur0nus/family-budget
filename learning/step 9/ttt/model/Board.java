@@ -1,7 +1,7 @@
 package ttt.model;
 
 public class Board {
-    private char[][] cells;
+    private CellState[][] cells;
     private static final int size = 3;
     // Выигрышные линии
     private static final int[][] winLines = {
@@ -23,31 +23,31 @@ public class Board {
     };
     
     public Board() {
-        cells = new char[size][size];
+        cells = new CellState[size][size];
         clear();
     }
     
     public void clear() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                cells[i][j] = ' ';
+                cells[i][j] = CellState.EMPTY;
             }
         }
     }
     
     public boolean isCellEmpty(int row, int col) {
-        return cells[row][col] == ' ';
+        return cells[row][col] == CellState.EMPTY;
     }
     
-    public void setCell(int row, int col, char symbol) {
-        cells[row][col] = symbol;
+    public void setCell(int row, int col, CellState state) {
+        cells[row][col] = state;
     }
     
-    public char getCell(int row, int col) {
+    public CellState getCell(int row, int col) {
         return cells[row][col];
     }
     
-    public char[][] getCells() {
+    public CellState[][] getCells() {
         return cells;
     }
     

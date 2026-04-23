@@ -1,6 +1,8 @@
 package ttt.ui;
 
 import ttt.model.Board;
+import ttt.model.CellState;
+
 import java.util.Scanner;
 
 public class Console {
@@ -27,7 +29,7 @@ public class Console {
     }
     
     public void printBoard(Board board) {
-        char[][] cells = board.getCells();
+        CellState[][] cells = board.getCells();
         System.out.println("---------------");
         System.out.println("| " + cells[0][0] + " || " + cells[0][1] + " || " + cells[0][2] + " |");
         System.out.println("---------------");
@@ -79,7 +81,7 @@ public class Console {
         System.out.println(msg);
     }
     
-    public void showWinner(String name, char symbol) {
+    public void showWinner(String name, CellState symbol) {
         System.out.println(name + " (" + symbol + ") победил!");
     }
     

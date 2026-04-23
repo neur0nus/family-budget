@@ -1,19 +1,19 @@
 package ttt.model;
 
 public abstract class Player {
-    protected char symbol;
+    protected CellState symbol;
     protected String name;
     protected Board board;
     
-    public Player(Board board, char symbol, String name) {
+    public Player(Board board, CellState symbol, String name) {
         this.board = board;
         this.symbol = symbol;
         this.name = name;
     }
     
-    public abstract void doStep(Board board);
+    public abstract void doStep();
     
-    public char getSymbol() {
+    public CellState getSymbol() {
         return symbol;
     }
     

@@ -2,12 +2,12 @@ package ttt.model;
 
 public class CompPlayer extends Player {
     
-    public CompPlayer(Board board, char symbol, String name) {
+    public CompPlayer(Board board, CellState symbol, String name) {
         super(board, symbol, name);
     }
     
     @Override
-    public void doStep(Board board) { 
+    public void doStep() { 
         System.out.println("\n" + name + " думает...\n");
         
         // Выигрыш
@@ -18,7 +18,7 @@ public class CompPlayer extends Player {
         }
         
         // Блокировка
-        char opponent = (symbol == 'X') ? '0' : 'X';
+        CellState opponent = (symbol == CellState.X) ? CellState.ZERO : CellState.X;
         move = findBestMove(board, opponent);
         if (move != null) {
             board.setCell(move[0], move[1], symbol);
@@ -34,7 +34,7 @@ public class CompPlayer extends Player {
         }
     }
     
-    private int[] findBestMove(Board board, char target) { 
+    private int[] findBestMove(Board board, CellState target) { 
         for (int[] line : Board.getWinLines()) {
             int count = 0;
             int emptyRow = -1, emptyCol = -1;
@@ -42,11 +42,11 @@ public class CompPlayer extends Player {
             for (int i = 0; i < 6; i += 2) {
                 int row = line[i];
                 int col = line[i + 1];
-                char cell = board.getCell(row, col);
+                CellState cell = board.getCell(row, col);
                 
                 if (cell == target) {
                     count++;
-                } else if (cell == ' ') {
+                } else if (cell == 	CellState.EMPTY) {
                     emptyRow = row;
                     emptyCol = col;
                 } else {
