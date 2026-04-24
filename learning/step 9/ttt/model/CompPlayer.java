@@ -2,8 +2,8 @@ package ttt.model;
 
 public class CompPlayer extends Player {
     
-    public CompPlayer(Board board, CellState symbol, String name) {
-        super(board, symbol, name);
+    public CompPlayer(Board board, CellState c, String name) {
+        super(board, c, name);
     }
     
     @Override

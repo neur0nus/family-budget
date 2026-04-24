@@ -5,8 +5,8 @@ import ttt.ui.Console;
 public class UserPlayer extends Player {
     private Console ui;
     
-    public UserPlayer(Board board, CellState symbol, String name, Console ui) {
-        super(board, symbol, name);
+    public UserPlayer(Board board, CellState c, String name, Console ui) {
+        super(board, c, name);
         this.ui = ui;
     }
     

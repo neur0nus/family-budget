@@ -2,12 +2,14 @@ package ttt.model;
 
 public class GameExceptions extends Exception {
     
-    public GameExceptions(String message) {
+    private static final long serialVersionUID = 1L;
+
+	public GameExceptions(String message) {
         super(message);
     }
     
-    public static GameExceptions emptyName() {
-        return new GameExceptions("Ошибка! Имя не может быть пустым.");
+    public static void GameExceptions_emptyName() throws GameExceptions{
+        throw new GameExceptions("Ошибка! Имя не может быть пустым.");
     }
     
     public static GameExceptions invalidChoice() {
