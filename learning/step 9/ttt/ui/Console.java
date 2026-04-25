@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Console {
@@ -80,16 +82,53 @@ public class Console {
         }
     }
 
-    // Чтение файла
+
+
+   // поиск файла
     private String readPlayerSymbolFromFile() {
-    	File file = new File("/home/artem/Документы/family-budget/learning/step 9/symbol.txt"); 
-        try {BufferedReader reader = new BufferedReader(new FileReader(file));
-                String symbol = reader.readLine();
-                reader.close();
-                return symbol;
-        } catch (IOException e) {
-            System.out.println("Файл с сохраненным символом не найден.");
+    	String content = null;
+
+    	File file = new File("./symbol.txt");
+    	if (file.exists()) {
+    		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+    			content = reader.readLine();
+    			System.out.println("Прочитано из файловой системы: " + content);
+    		} catch (IOException e) {
+    			System.out.println("Ошибка чтения файла: " + e.getMessage());
+    			e.printStackTrace();
+    		}
+    	}
+
+    	if (content == null || content.trim().isEmpty()) {
+    		try (InputStream inputStream = getClass().getResourceAsStream("/symbol.txt")) {
+    			if (inputStream != null) {
+    				try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+    					content = reader.readLine();
+    					System.out.println("Прочитано из resources: " + content);
+    				}
+    			}
+    		} catch (IOException e) {
+    			System.out.println("Ошибка чтения ресурса: " + e.getMessage());
+    			e.printStackTrace();
+    		}
+    	}
+
+    	if (content == null || content.trim().isEmpty()) {
+    		System.out.println("Файл symbol.txt не найден или пуст");
+    		return null;
+    	}
+        
+        String parsedContent = content.trim().toUpperCase();
+
+        if (parsedContent.contains("X") || parsedContent.contains("Х")) {
+            return String.valueOf(CellState.X.getSymbol());
+        } 
+        else if (parsedContent.contains("0")) {
+            System.out.println("Найден символ: O");
+            return String.valueOf(CellState.ZERO.getSymbol());
         }
+        
+        System.out.println("Не удалось распознать символ в файле: " + content);
         return null;
     }
     
