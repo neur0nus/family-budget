@@ -3,3 +3,9 @@ bin/
 out/
 .classpath
 .project
+
+step14/ru/hw/test/thread/CounterExample.java
+
+step14/ru/hw/test/SimpleMoscowTimeFile.java
+
+step14/ru/hw/test/thread/ThreadTest.java
