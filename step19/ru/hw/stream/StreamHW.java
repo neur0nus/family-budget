@@ -1,13 +1,12 @@
 package ru.hw.stream;
 
-import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
 
 public class StreamHW {
 	
@@ -31,14 +30,26 @@ public class StreamHW {
 			Order order1 = new Order();
 			order1.id = UUID.randomUUID().toString();
 			order1.customerName = names[random.nextInt(names.length)];
-			order1.totalPrice = 100 + random.nextDouble()*10_000;
+			order1.totalPrice = random.nextDouble()*10_000;
 			order1.status = statuses[random.nextInt(statuses.length)];
 			order.add(order1);
 		}
 		
-		order.stream()
-			//.filter(o -> o.totalPrice > 1000)
-			.map(o -> "ID |"+o.id+"| Покупатель "+o.customerName+" Цена - "+o.totalPrice)
-			.forEach(System.out::println);
+		List<String> overth = order.stream()
+			.filter(o -> o.totalPrice > 1000)
+			.map(o -> "\nID |"+o.id+"| Покупатель "+o.customerName+" Цена - "+o.totalPrice)
+			.collect(Collectors.toList());
+		System.out.println(overth);
+		
+		List<Order> paidOrd = order.stream()
+			    .filter(o -> o.status == ORDER_STATUS.PAID)     
+			    .filter(o -> "Мария".equals(o.customerName))          
+			    .sorted(Comparator.comparingDouble(o -> o.totalPrice))  
+			    .collect(Collectors.toList());
+		System.out.println(paidOrd);		
+		
+		System.out.println(order.stream()
+			.map(o -> o.totalPrice)
+			.reduce(0.0, Double::sum)); 
 	}
 }
