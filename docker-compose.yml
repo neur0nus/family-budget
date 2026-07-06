@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # База данных PostgreSQL
+  db:
+    image: docker.io/library/postgres:15-alpine
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: fambudgdb
+    volumes:
+      - ./pg/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
